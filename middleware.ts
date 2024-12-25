@@ -37,7 +37,7 @@ export default auth(async (req) => {
   }
   if (
     req.nextUrl.pathname.startsWith("/home") &&
-    req.auth?.user.status !== "ACTIVE"
+    req.auth?.user?.status !== "ACTIVE"
   ) {
     return NextResponse.redirect(new URL("/inActive", req.url));
   }
